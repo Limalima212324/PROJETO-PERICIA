@@ -5,6 +5,7 @@
     box-sizing: border-box; /* Box sizing para incluir padding e border no tamanho total */
 }
 
+
 body {
     font-family: 'Source Sans Pro', sans-serif; /* Fonte principal */
     background: #f8f8f8; /* Cor de fundo suave */
@@ -32,8 +33,11 @@ h6 {
 }
 
 #sobre p {
-    font-size: 1.02rem;
+    font-size: 1..25rem;
     text-transform: capitalize; /* Capitaliza a primeira letra de cada palavra */
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
 }
 
 /* ===== CONTAINER ===== */
@@ -83,6 +87,37 @@ nav .menu a {
 nav .menu a:hover {
     color: #f59e0b; /* Cor ao passar o mouse */
 }
+
+
+nav .menu a {
+    position: relative; /* para o pseudo-elemento */          
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    padding-bottom: 4px; /* espaço para a linha */
+    transition: color 0.3s ease; /* transição suave */
+}
+
+/* linha invisível inicialmente */
+nav .menu a::after {
+    content: ""; /* conteúdo vazio */
+    position: absolute; /* posição absoluta */
+    left: 0;                 /* alinhado à esquerda */
+    bottom: 0;              /* alinhado à parte inferior */
+    width: 0;                /* largura inicial 0 */
+    height: 2px;           /* altura da linha */
+    background-color: #f59e0b;    /* mesma cor do tema */
+    transition: width 0.3s ease; /* transição suave */
+}
+
+/* hover */
+nav .menu a:hover { 
+    color: #f59e0b; /* cor ao passar o mouse */
+}
+
+nav .menu a:hover::after { 
+    width: 100%;                  /* linha cresce */
+}
+
 
 /* ===== HERO ===== */
 
@@ -276,3 +311,4 @@ body {
 main, section {
     flex: 1; /* faz o conteúdo empurrar o rodapé para baixo */
 }
+
