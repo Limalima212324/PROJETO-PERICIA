@@ -181,6 +181,7 @@ section .divider {
 }
 
 .card {
+    border: 2px solid rgb(242, 156, 11);
     background: #fff; /* Fundo branco */
     padding: 2rem; /* Padding interno */
     border-radius: 8px; /* Bordas arredondadas */
