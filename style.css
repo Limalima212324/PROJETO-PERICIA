@@ -1,0 +1,278 @@
+/* ===== RESET ===== */
+* {
+    margin: 0; /* Reset de margem */
+    padding: 0; /* Reset de padding */
+    box-sizing: border-box; /* Box sizing para incluir padding e border no tamanho total */
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif; /* Fonte principal */
+    background: #f8f8f8; /* Cor de fundo suave */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    scroll-behavior: smooth;    /* Rolagem suave */
+}
+
+#container .logo {
+    font-family: 'Merriweather', serif; /* Fonte serifada para títulos */
+
+}
+/* ===== TIPOGRAFIA ===== */
+.font-serif {
+    font-family: 'Merriweather', serif; /* Fonte serifada para títulos */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif; /* Fonte serifada para títulos */
+}
+
+#sobre p {
+    font-size: 1.02rem;
+    text-transform: capitalize; /* Capitaliza a primeira letra de cada palavra */
+}
+
+/* ===== CONTAINER ===== */
+.container { 
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 1rem; /* Padding horizontal */
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed; /* Fixa o header no topo */
+    top: 0; /* Posição superior */
+    left: 0; /* Posição esquerda */
+    right: 0; /* Posição direita */
+    z-index: 50; /* Garante que o header fique acima de outros elementos */
+    background: rgba(255, 255, 255, 0.95);  /* Fundo branco semi-transparente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+nav {
+    display: flex;  /* Flexbox para layout */
+    justify-content: space-between; /* Espaço entre itens */
+    align-items: center; /* Alinha itens verticalmente */
+    padding: 1rem; /* Padding interno */
+}
+
+nav .logo {
+    font-weight: bold; /* Negrito */
+    font-size: 1.5rem;  /* Tamanho da fonte */
+    color: #f59e0b; /* Cor da logo */
+    font-family: 'Merriweather', serif; /* Fonte serifada para títulos */
+
+}
+
+nav .menu {
+    display: flex; /* Flexbox para o menu */
+    gap: 1rem; /* Espaçamento entre os links */
+}
+
+nav .menu a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    transition: color 0.3s; /* Transição suave para hover */
+}
+
+nav .menu a:hover {
+    color: #f59e0b; /* Cor ao passar o mouse */
+}
+
+/* ===== HERO ===== */
+
+#inicio img.foto-perfil {
+    width: 145px; /* Largura da foto */
+    height: 140px; /* Altura da foto */
+    border-radius: 50%; /* Torna a foto circular */
+}
+#inicio {
+    min-height: 100vh; /* Altura mínima de 100% da viewport */
+    display: flex; /* Flexbox para layout */
+    align-items: center; /* Alinha itens verticalmente */
+    justify-content: center; /* Centraliza itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    /* background: linear-gradient(to bottom right, #1e293b, #334155, #1e293b); */
+    color: #fff; /* Cor do texto branco */
+    padding: 0 1rem; /* Padding horizontal */
+    background: #F69C0B;
+    background: linear-gradient(90deg, rgba(246, 156, 11, 1) 0%, rgba(246, 156, 11, 1) 14%, rgba(246, 156, 11, 1) 29%, rgba(17, 85, 102, 1) 83%);}
+
+#inicio h1 {
+    font-size: 3rem; /* Tamanho da fonte */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+#inicio h2 {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    font-weight: 400; /* Peso da fonte */
+}
+
+#inicio p {
+    max-width: 700px; /* Largura máxima do parágrafo */
+    margin: 0 auto 2rem; /* Centraliza e espaçamento inferior */
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 5rem 1rem; /* Padding superior e inferior */
+}
+
+section h2 {
+    font-size: 2rem; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+section .divider {
+    width: 60px; /* Largura da linha divisória */
+    height: 4px; /* Altura da linha divisória */
+    background: #f59e0b; /* Cor da linha divisória */
+    margin: 0 auto 2rem; /* Centraliza e espaçamento inferior */
+    border-radius: 2px; /* Bordas arredondadas */
+}
+
+/* ===== CARDS ===== */
+.cards {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo */
+    gap: 2rem; /* Espaçamento entre os cards */
+}
+
+.card {
+    background: #fff; /* Fundo branco */
+    padding: 2rem; /* Padding interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(40px); /* Deslocamento inicial */
+    transition: all 0.8s ease; /* Transição suave */
+}
+
+.card.visible {
+    opacity: 1; /* Torna o card visível */
+    transform: translateY(0); /* Remove o deslocamento */
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+    position: relative; /* Posição relativa para o pseudo-elemento */
+    margin: 2rem 0; /* Espaçamento vertical */
+}
+
+.timeline::before { 
+    content: ""; /* Conteúdo vazio */
+    position: absolute; /* Posição absoluta */
+    left: 20px; /* Posição à esquerda */
+    top: 0;      /* Posição no topo */
+    bottom: 0; /* Posição na parte inferior */
+    width: 4px; /* Largura da linha */
+    background: #f59e0b; /* Cor da linha */
+}
+
+.timeline-item {
+    position: relative; /* Posição relativa para o pseudo-elemento */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+    padding-left: 60px; /* Espaçamento à esquerda */
+}
+
+.timeline-item::before {
+    content: ""; /* Conteúdo vazio */
+    position: absolute; /* Posição absoluta */
+    left: 12px; /* Posição à esquerda */
+    top: 0;     /* Posição no topo */
+    width: 16px; /* Largura do círculo */
+    height: 16px; /* Altura do círculo */
+    border-radius: 50%; /* Torna o elemento circular */
+    background: #f59e0b; /* Cor do círculo */
+}
+
+.timeline-item h4 {
+    margin-bottom: 0.5rem; /* Espaçamento inferior */
+}
+
+#experiencia .timeline-item p {
+    text-transform: capitalize; /* Capitaliza a primeira letra de cada palavra */
+    font-size: 1.5rem;
+}
+
+/* ===== FORMULÁRIO CONTATO ===== */
+#contato form {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    display: flex; /* Flexbox para layout */
+    flex-direction: column; /* Direção da coluna */
+    gap: 1rem; /* Espaçamento entre os elementos */
+}
+
+#contato input, 
+#contato textarea { 
+    padding: 0.75rem; /* Padding interno */
+    border-radius: 6px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    font-size: 1rem; /* Tamanho da fonte */
+    width: 100%; /* Largura total */
+}
+
+#contato button {
+    padding: 1rem; /* Padding interno */
+    border: none; /* Remove a borda */
+    border-radius: 6px; /* Bordas arredondadas */
+    background: #f59e0b; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor pointer */
+    transition: background 0.3s; /* Transição suave */
+}
+
+#contato button:hover {
+    background: #d97706; /* Cor de fundo ao passar o mouse */
+}
+
+/* ===== RESPONSIVO ===== */
+@media(max-width:768px) { 
+    #inicio h1 { 
+        font-size: 2rem; /* Tamanho da fonte */
+    }
+
+    #inicio h2 {
+        font-size: 1.2rem; /* Tamanho da fonte */
+    }
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: #1e293b; /* cor escura */
+    color: #fff;               /* texto branco */
+    text-align: center;        /* centraliza o texto */
+    padding: 1.5rem;           /* espaço interno */
+    font-size: 0.9rem;         /* texto menor */
+    margin-top: 2rem;          /* distância do conteúdo */
+}
+
+/* Link no rodapé (se houver futuramente) */
+footer a {
+    color: #f59e0b;            /* cor laranja */
+    text-decoration: none; /* sem sublinhado */
+}
+
+footer a:hover {
+    text-decoration: underline; /* sublinha no hover */
+}
+
+/* RODAPÉ FIXO NA PARTE INFERIOR SE POUCO CONTEÚDO */
+body {
+    display: flex; /* Flexbox para layout */
+    flex-direction: column; /* Direção da coluna */
+    min-height: 100vh; /* Altura mínima de 100% da viewport */
+}
+
+main, section {
+    flex: 1; /* faz o conteúdo empurrar o rodapé para baixo */
+}
