@@ -23,3 +23,24 @@ function enviarWhats(event) { // função para enviar mensagem via WhatsApp
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`; // cria a URL do WhatsApp com a mensagem codificada
   window.open(url, '_blank'); // abre a URL em uma nova aba
 }
+
+
+
+// ===== MODAL CURRÍCULO =====
+const abrirCurriculo = document.getElementById('abrirCurriculo');
+const modalCurriculo = document.getElementById('modalCurriculo');
+const fecharModal = document.querySelector('.fechar-modal');
+
+abrirCurriculo.addEventListener('click', () => {
+  modalCurriculo.style.display = 'block';
+});
+
+fecharModal.addEventListener('click', () => {
+  modalCurriculo.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modalCurriculo) {
+    modalCurriculo.style.display = 'none';
+  }
+});
